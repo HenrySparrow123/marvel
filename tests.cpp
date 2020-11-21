@@ -3,7 +3,7 @@
 #include "catch.hpp"
 #include "marvel.hpp"
 
-/*
+
 TEST_CASE("Personne1") {
     const char * prenom   = "Bruce";
     const char * nom      = "Wayne";
@@ -13,9 +13,9 @@ TEST_CASE("Personne1") {
     REQUIRE( prenom    == p.getPrenom());
     REQUIRE( nom       == p.getNom());
     REQUIRE( genre     == p.getGenre());
-}*/
+}
 
-/*
+
 TEST_CASE("Personne2") {
     const Personne p("Diana", "Prince", Personne::FEMME);
 
@@ -65,11 +65,13 @@ TEST_CASE("Anonyme1") {
     REQUIRE ("Parker" == spider.getIdentite().getNom());
 }
 
+
 TEST_CASE("Anonyme2") {
     const char * msg = "identite anonyme";
     AnonymeException ie;
-    REQUIRE( strcmp(msg, ie.what() );
-} 
+    REQUIRE( !strcmp(msg, ie.what()) );
+}
+ 
 
 TEST_CASE("Anonyme3") {
     Super spider("Spiderman", Personne("Peter", "Parker", Personne::HOMME));
@@ -87,24 +89,25 @@ TEST_CASE("Super2") {
     CHECK( "Brock"  == venom.getIdentite().getNom() );
     CHECK( "Parker" != venom.getIdentite().getNom() );
 }
-*/
 
 
-/*
+
+
 // Test qui ne doit pas compiler
 // Sera testé si les tests sur les capacités sont réussis
-TEST_CASE("Capacite0") {
+/*TEST_CASE("Capacite0") {
     Capacite c("aucune", 0);
-} 
-*/
+} */
 
-/*
+
+
 TEST_CASE("Materiel") {
     Materiel armure("MarkI", 5);
     std::stringstream log;
     armure.actionner(log); 
     REQUIRE ( "MarkI [5] en action" == log.str()); 
 } 
+
 
 TEST_CASE("Physique") {
     Physique force("force", 3);
@@ -161,7 +164,7 @@ TEST_CASE("Capacite3") {
     delete m3;
 }
 
-TEST_CASE("Super3") {
+/*TEST_CASE("Super3") {
     Super iron("Iron Man", Personne("Tony", "Starck"));
     iron.enregistrer();
     iron.ajouter(new Materiel("armure", 10));
